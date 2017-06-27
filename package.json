@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API RESTful con Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edwin Castillo",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "crypto": "0.0.3",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

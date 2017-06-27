@@ -1,0 +1,30 @@
+<form id="login" method="POST">
+	<p>
+		<input type="email" name="email" placeholder="Tu email">
+	</p>
+	<p>
+		<input type="password" name="password" placeholder="Tu contraseña">
+	</p>
+	<p>
+		<input type="submit" value="Ingresar" />
+	</p>
+</form>
+
+<script>
+	const formLogin = document.getElementById('login')
+	const formData = new FormData(formLogin)
+
+	formLogin.addEventListener('submit', e => {
+		console.log(formData)
+		e.preventDefault()
+		fetch('/api/signin', {
+			method: 'POST',
+			body: formData
+		})
+		.then(res => res.json())
+		.then(data => {
+			// localStorage.setItem('_token', data.token)
+			console.log(data);
+		})
+	})
+</script>
