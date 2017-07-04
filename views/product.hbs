@@ -3,7 +3,7 @@
 	let productList = document.createElement('ul')
 
 	const myHeaders = new Headers();
-	myHeaders.append('authorization', `Bearer ${localStorage._token}`)
+	myHeaders.append('Authorization', `Bearer ${localStorage._token}`)
 
 	fetch('/api/product', {
 		method: 'GET',

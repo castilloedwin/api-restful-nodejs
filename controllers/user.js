@@ -19,13 +19,14 @@ function signUp (req, res) {
 }
 
 function signIn (req, res) {
-	User.findOne( { email: req.query.email }, (err, user) => {
+	User.findOne( { email: req.body.email }, (err, user) => {
 
-		user.comparePassword(req.query.password, (err, isMatch) => {
-			if (err) throw err
+		if (err) throw err
+
+		user.comparePassword(req.body.password, (error, isMatch) => {
 			if (!isMatch) return res.status(403).send( { message: 'Las credenciales no coinciden' } )
 
-			req.user = user;		
+			req.user = user	
 			return res.status(200).send( { message: 'Te has logueado correctamente', token: service.createToken(user), user } )
 		})
 	})
